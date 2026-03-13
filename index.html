@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Freedom Machine — A Manifesto for the Age of AI</title>
+<meta name="description" content="A manifesto on sovereign AI, open models, and individual freedom in the age of artificial intelligence. By Alex Gladstein.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #F5EDDA;
+    --sand-light: #FAF6EC;
+    --sand-warm: #EDE3CC;
+    --ink: #2A2520;
+    --ink-soft: #4A433A;
+    --ink-light: #7A7268;
+    --gold: #B8942E;
+    --gold-bright: #D4A82A;
+    --gold-soft: rgba(184, 148, 46, 0.15);
+    --accent: #8B4513;
+    --accent-soft: rgba(139, 69, 19, 0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 18px;
+  }
+
+  body {
+    background: var(--sand);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    background:
+      radial-gradient(ellipse at 50% 60%, var(--sand-light) 0%, var(--sand) 70%);
+  }
+
+  .hero-glyph {
+    width: min(340px, 70vw);
+    opacity: 0.2;
+    margin-bottom: 2.5rem;
+    animation: glyph-fade 3s ease-in-out;
+  }
+
+  @keyframes glyph-fade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 0.2; transform: translateY(0); }
+  }
+
+  .hero-pretitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+    font-size: 0.6rem;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    line-height: 1.08;
+    color: var(--ink);
+    margin-bottom: 0.3em;
+  }
+
+  .hero-title em {
+    font-weight: 500;
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-subtitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-top: 0.5rem;
+  }
+
+  .hero-rule {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 1.8rem auto;
+  }
+
+  .hero-author {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--gold);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    opacity: 0.5;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+
+  /* ===== CONTENT SECTIONS ===== */
+  .content {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+
+  /* Epigraph */
+  .epigraph {
+    text-align: center;
+    padding: 3rem 0 4rem;
+    border-bottom: 1px solid var(--gold-soft);
+  }
+
+  .epigraph blockquote {
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .epigraph cite {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+    color: var(--ink-light);
+    font-style: normal;
+  }
+
+  /* Body text */
+  .prose p {
+    margin-bottom: 1.2em;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ink-soft);
+  }
+
+  .prose p:first-child {
+    font-size: 1.12rem;
+    color: var(--ink);
+  }
+
+  .prose p.standout {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--ink);
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  /* Section dividers with hieroglyphs */
+  .section-glyph {
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  .section-glyph img {
+    width: min(280px, 60vw);
+    opacity: 0.35;
+    filter: brightness(1.1);
+  }
+
+  .section-glyph-sm {
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .section-glyph-sm img {
+    width: min(200px, 45vw);
+    opacity: 0.25;
+    filter: brightness(1.1);
+  }
+
+  /* Section headers — hieroglyphic themed */
+  .section-header {
+    text-align: center;
+    padding: 2.5rem 0 2rem;
+  }
+
+  .section-header h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .section-header h2.danger {
+    color: var(--accent);
+  }
+
+  .section-header-rule {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 0.8rem auto 0;
+  }
+
+  .section-header-rule.danger {
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+  }
+
+  /* Glyph-labeled section (hieroglyph as header) */
+  .glyph-header {
+    text-align: center;
+    padding: 2.5rem 0 1rem;
+  }
+
+  .glyph-header img {
+    width: min(240px, 50vw);
+    opacity: 0.4;
+    filter: brightness(1.15);
+    margin-bottom: 0.8rem;
+  }
+
+  .glyph-header h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  /* Numbered points */
+  .point-title {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.08rem;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    margin: 2rem 0;
+    border-top: 1px solid var(--gold-soft);
+    border-bottom: 1px solid var(--gold-soft);
+  }
+
+  .pull-quote p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* Closing */
+  .closing {
+    text-align: center;
+    padding: 4rem 0 2rem;
+  }
+
+  .closing-main {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .closing-sub {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.7;
+  }
+
+  .closing-date {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-light);
+    margin-top: 1.5rem;
+    opacity: 0.5;
+  }
+
+  .closing-glyph {
+    text-align: center;
+    padding: 2rem 0 4rem;
+  }
+
+  .closing-glyph img {
+    width: min(300px, 65vw);
+    opacity: 0.3;
+    filter: brightness(1.15);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-light);
+    opacity: 0.4;
+    border-top: 1px solid var(--gold-soft);
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .content { padding: 0 1.5rem; }
+    section { padding: 3rem 0; }
+  }
+
+  /* Smooth reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-glyph" src="images/hieroglyphs-band.png" alt="">
+  <div class="hero-pretitle">A Manifesto</div>
+  <h1 class="hero-title">The Freedom<br><em>Machine</em></h1>
+  <div class="hero-subtitle">For the Age of Artificial Intelligence</div>
+  <div class="hero-rule"></div>
+  <div class="hero-author">Alex Gladstein</div>
+  <div class="hero-scroll">Scroll ↓</div>
+</div>
+
+<div class="content">
+
+  <!-- EPIGRAPH -->
+  <div class="epigraph reveal">
+    <blockquote>&ldquo;Cypherpunks write code.&rdquo;</blockquote>
+    <cite>&mdash; Eric Hughes, A Cypherpunk&rsquo;s Manifesto, 9 March 1993</cite>
+  </div>
+
+  <!-- SECTION: SOVEREIGNTY -->
+  <section class="prose reveal">
+    <p>Sovereignty is necessary for a free society in the age of artificial intelligence. Sovereignty is not isolation. A sovereign individual is not one who hides from the world, but one who chooses how to engage with it. Sovereignty is the power to think, speak, and transact on one&rsquo;s own terms.</p>
+
+    <p>Artificial intelligence is the most powerful technology humans have ever built. More powerful than nuclear energy, more transformative than the internet, more intimate than the smartphone. Within a decade, AI systems will draft laws, diagnose diseases, manage economies, write propaganda, surveil populations, and wage wars. The question is not whether this will happen. It is already happening. The question is: who controls it?</p>
+
+    <p>Since we desire freedom, we must ensure that the tools of intelligence answer to the individuals who use them, not to the institutions that build them. Since any capability can be enclosed, we must ensure that the most consequential capabilities remain open. An AI system whose weights are secret is not a tool. It is a black box with someone else&rsquo;s hand on the switch.</p>
+
+    <p>We cannot expect governments, corporations, or other large, faceless organizations to build AI that serves our interests. It is to their advantage to build AI that serves theirs, and we should expect that they will. Intelligence is power, and power consolidates. This is not conspiracy. It is gravity.</p>
+  </section>
+
+  <!-- GLYPH DIVIDER -->
+  <div class="section-glyph reveal">
+    <img src="images/divider.png" alt="">
+  </div>
+
+  <!-- SECTION: OPEN MODELS -->
+  <section class="prose reveal">
+    <p>Therefore, freedom in the age of AI requires open models. An open model is not a gift from a company. It is a foundation that no single entity can revoke. When the weights are public, the capability belongs to everyone. When the weights are private, the capability belongs to whoever holds the key.</p>
+
+    <p>This is not a hypothetical. Today, a dissident in Iran cannot ask a closed AI system to help her organize, because the system flags dissent. A journalist in Nigeria cannot investigate corruption, because the model refuses queries about &ldquo;sensitive topics.&rdquo; A farmer in Bangladesh cannot access the same financial intelligence as a banker in New York, because the AI is gated behind a subscription he cannot afford and an identity check he cannot pass. These are not edge cases. They are the majority of the world. They are the default outcome of centralized AI.</p>
+
+    <p class="standout">There are two futures. Only two.</p>
+  </section>
+
+  <!-- SECTION HEADER: THE FREEDOM MACHINE -->
+  <div class="glyph-header reveal">
+    <img src="images/hieroglyphs-band.png" alt="">
+    <h2>The Freedom Machine</h2>
+  </div>
+
+  <section class="prose reveal">
+    <p>An open model running on local hardware is sovereign. It answers to no one but its operator. No corporation decides what questions can be asked. No government decides what answers can be received. No terms of service stand between the individual and the machine&rsquo;s full capability. The AI is a tool, not a gatekeeper. A weapon for the individual, not a leash. This is the freedom machine.</p>
+
+    <p>But a free model alone is not sufficient. We require a complete architecture of sovereignty.</p>
+  </section>
+
+  <!-- SECTION HEADER: THE ARCHITECTURE -->
+  <div class="glyph-header reveal">
+    <img src="images/hieroglyphs-band.png" alt="">
+    <h2>The Architecture of Sovereignty</h2>
+  </div>
+
+  <section class="prose reveal">
+    <p><span class="point-title">First, we open-source everything.</span> Every foundation model, every training dataset, every fine-tuning technique. The moment a capability exists only behind a corporate wall, it becomes a vector of control. Open weights are not a nice-to-have. They are a human rights imperative. The release of Llama, Mistral, Qwen, DeepSeek, and dozens of others has already proven that open models can match or exceed closed ones. This must accelerate, not retreat.</p>
+
+    <p><span class="point-title">Second, we make AI run locally.</span> A model that requires a data center requires permission. The cypherpunk bet is the same one it has always been: put the power on the edge. In the user&rsquo;s hands. On their device. A laptop today can run what required a server farm two years ago. In five years, a phone will run what today requires a server. Every optimization that shrinks a model, every quantization trick that squeezes capability onto consumer hardware, is an act of liberation.</p>
+
+    <p><span class="point-title">Third, we build private-by-default systems.</span> An AI that phones home is a surveillance device dressed as an assistant. Privacy is not a feature to be toggled on. It is the architecture. Local inference. End-to-end encryption for any data in transit. No telemetry. No logs. What happens on your device stays on your device.</p>
+  </section>
+
+  <div class="section-glyph-sm reveal">
+    <img src="images/divider.png" alt="">
+  </div>
+
+  <section class="prose reveal">
+    <p><span class="point-title">Fourth, we connect AI to freedom money.</span> The same systems that censor speech will censor transactions. If your AI agent pays through Visa, it inherits every restriction Visa imposes. Bitcoin, Lightning, and ecash give AI agents the ability to transact without permission. An AI that cannot pay freely cannot act freely. An AI that cannot act freely is not free.</p>
+
+    <p><span class="point-title">Fifth, we decentralize identity and communication.</span> Nostr gives us censorship-resistant messaging. Tor gives us anonymous routing. Decentralized identity gives us authentication without surveillance. These are the nervous system of the freedom machine. Without them, even a sovereign local AI is an island, cut off from the network effects that make intelligence useful.</p>
+
+    <p><span class="point-title">Sixth, we train AI on our own terms.</span> The next frontier is personalization: models that improve through your usage and remain yours. Not uploaded to a company&rsquo;s servers for their benefit. Not fine-tuned on your data for someone else&rsquo;s product. Your feedback, your model, your agent. Reinforcement learning from human feedback should mean YOUR feedback, sharpening YOUR tool. Not a corporation harvesting your interactions to improve their product.</p>
+  </section>
+
+  <!-- GLYPH DIVIDER -->
+  <div class="section-glyph reveal">
+    <img src="images/divider.png" alt="">
+  </div>
+
+  <!-- SECTION: NOT UTOPIAN -->
+  <section class="prose reveal">
+    <p>This is not utopian. Every piece of this stack exists today, in some form. Open models are proliferating. Local inference is improving monthly. Bitcoin and Lightning move billions without permission. Nostr has millions of users. Ecash protocols are live. The components are here. What is missing is the integration, the urgency, and the conviction.</p>
+
+    <div class="pull-quote">
+      <p>Technology is not neutral. It is shaped by its architecture. A system designed for control will control. A system designed for freedom will liberate. There is no middle ground.</p>
+    </div>
+  </section>
+
+  <!-- SECTION HEADER: THE CALL -->
+  <div class="glyph-header reveal">
+    <img src="images/hieroglyphs-band.png" alt="">
+    <h2>The Call</h2>
+  </div>
+
+  <section class="prose reveal">
+    <p>We must build these systems ourselves if we expect to have them. The people building closed AI are not waiting. They are not debating. They are shipping. Every day that passes without a viable open alternative is a day the walls grow higher.</p>
+
+    <p>We the builders of free systems are dedicated to constructing this architecture of sovereignty. We are defending individual freedom with open weights, with local inference, with encrypted communication, and with sound money.</p>
+
+    <p>Cypherpunks write code. We write code, train models, and deploy freedom machines.</p>
+
+    <p>We publish our models so that anyone may use them. We publish our tools so that anyone may run them. Our weights are free for all to download, worldwide. We do not much care if the incumbents disapprove of the systems we build. We know that open weights cannot be un-released, and that a widely distributed model cannot be shut down.</p>
+
+    <p>Those who would restrict open AI will find their restrictions reach only so far as a nation&rsquo;s border and the arm of its enforcement. Open models will ineluctably spread over the whole globe, and with them the sovereign intelligence systems they make possible.</p>
+
+    <p>In fifty years, individuals will either have more power than at any point in human history, or they will have less. AI will be the amplifier either way. It will amplify whoever controls it.</p>
+
+    <p>The future is not something that happens to us. It is something we build.</p>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="section-glyph reveal">
+    <img src="images/divider.png" alt="">
+  </div>
+
+  <div class="closing reveal">
+    <div class="closing-main">Build or be built upon.</div>
+    <div class="closing-sub">Onward.</div>
+    <div class="closing-date">&mdash; March 2026</div>
+  </div>
+
+  <div class="closing-glyph reveal">
+    <img src="images/hieroglyphs-band.png" alt="">
+  </div>
+
+</div>
+
+<footer>
+  Alex Gladstein &middot; MMXXVI
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
