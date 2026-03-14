@@ -67,9 +67,10 @@
 
   .hero-mosaic img {
     width: 100%;
-    border-radius: 6px;
-    opacity: 0.85;
-    filter: brightness(1.1) contrast(1.05);
+    border-radius: 8px;
+    opacity: 0.9;
+    filter: brightness(1.4) contrast(1.15);
+    mix-blend-mode: lighten;
     clip-path: inset(0 0 15% 0);
     transition: opacity 0.3s ease;
   }
@@ -161,11 +162,8 @@
   }
 
   section {
-    padding: 1rem 0;
-  }
-
-  section + section {
-    padding-top: 0;
+    padding: 0;
+    margin: 0;
   }
 
   /* Epigraph */
@@ -302,8 +300,8 @@
   /* Pull quote */
   .pull-quote {
     text-align: center;
-    padding: 1.5rem 1rem;
-    margin: 1rem 0;
+    padding: 3rem 2rem;
+    margin: 3rem 0;
     border-top: 1px solid var(--gold-soft);
     border-bottom: 1px solid var(--gold-soft);
   }
@@ -319,7 +317,7 @@
   /* Closing */
   .closing {
     text-align: center;
-    padding: 2rem 0 1.5rem;
+    padding: 4rem 0 2rem;
   }
 
   .closing-main {
@@ -365,7 +363,7 @@
   /* Inline thematic glyphs */
   .inline-glyph {
     text-align: center;
-    padding: 1rem 0 0.5rem;
+    padding: 5rem 0 2rem;
   }
 
   .inline-glyph img {
@@ -381,12 +379,12 @@
 
   .inline-glyph .glyph-label {
     font-family: 'Rajdhani', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.2em;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--ink);
-    margin-top: 0.2rem;
+    color: var(--ink-soft);
+    margin-top: 1rem;
   }
 
   /* Footer */
@@ -412,7 +410,8 @@
     .glyph-header { padding: 0.8rem 0 0.5rem; }
     .epigraph cite { font-size: 0.65rem; }
     .inline-glyph img { width: min(360px, 85vw); }
-    .inline-glyph .glyph-label { font-size: 0.9rem; }
+    .inline-glyph .glyph-label { font-size: 0.8rem; }
+    .inline-glyph { padding: 3rem 0 1.5rem; }
   }
 
 
