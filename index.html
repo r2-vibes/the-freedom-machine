@@ -166,7 +166,7 @@
   /* Epigraph */
   .epigraph {
     text-align: center;
-    padding: 3rem 0 4rem;
+    padding: 1.5rem 0 2rem;
     border-bottom: 1px solid var(--gold-soft);
   }
 
@@ -266,11 +266,11 @@
   /* Glyph-labeled section (hieroglyph as header) */
   .glyph-header {
     text-align: center;
-    padding: 2.5rem 0 1rem;
+    padding: 1.2rem 0 0.8rem;
   }
 
   .glyph-header img {
-    width: min(240px, 50vw);
+    width: min(400px, 75vw);
     opacity: 0.9;
     filter: brightness(1.4) contrast(1.15);
     mix-blend-mode: lighten;
@@ -296,8 +296,8 @@
   /* Pull quote */
   .pull-quote {
     text-align: center;
-    padding: 2.5rem 1rem;
-    margin: 2rem 0;
+    padding: 1.5rem 1rem;
+    margin: 1rem 0;
     border-top: 1px solid var(--gold-soft);
     border-bottom: 1px solid var(--gold-soft);
   }
@@ -313,7 +313,7 @@
   /* Closing */
   .closing {
     text-align: center;
-    padding: 4rem 0 2rem;
+    padding: 2rem 0 1.5rem;
   }
 
   .closing-main {
@@ -346,11 +346,11 @@
 
   .closing-glyph {
     text-align: center;
-    padding: 2rem 0 4rem;
+    padding: 1rem 0 2rem;
   }
 
   .closing-glyph img {
-    width: min(300px, 65vw);
+    width: min(450px, 80vw);
     opacity: 0.9;
     filter: brightness(1.4) contrast(1.15);
     mix-blend-mode: lighten;
@@ -373,9 +373,10 @@
   @media (max-width: 600px) {
     html { font-size: 17px; }
     .content { padding: 0 1.5rem; }
-    section { padding: 3rem 0; }
+    section { padding: 1.5rem 0; }
     .hero-pretitle, .hero-subtitle, .hero-scroll { font-size: 0.75rem; }
     .glyph-header h2 { font-size: 0.75rem; }
+    .glyph-header { padding: 0.8rem 0 0.5rem; }
     .epigraph cite { font-size: 0.65rem; }
   }
 
