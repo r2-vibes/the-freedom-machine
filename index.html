@@ -357,6 +357,33 @@
     mix-blend-mode: lighten;
   }
 
+  /* Inline thematic glyphs */
+  .inline-glyph {
+    text-align: center;
+    padding: 2rem 0 0.5rem;
+  }
+
+  .inline-glyph img {
+    width: min(420px, 80vw);
+    display: block;
+    margin: 0 auto;
+    opacity: 0.9;
+    filter: brightness(1.4) contrast(1.15);
+    mix-blend-mode: lighten;
+    clip-path: inset(0 0 13% 0);
+    border-radius: 8px;
+  }
+
+  .inline-glyph .glyph-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-top: 0.5rem;
+  }
+
   /* Footer */
   footer {
     text-align: center;
@@ -379,39 +406,10 @@
     .glyph-header h2 { font-size: 0.75rem; }
     .glyph-header { padding: 0.8rem 0 0.5rem; }
     .epigraph cite { font-size: 0.65rem; }
-  }
-
-
-  /* Inline thematic glyphs */
-  .inline-glyph {
-    text-align: center;
-    padding: 2rem 0 0.5rem;
-  }
-
-  .inline-glyph img {
-    width: min(420px, 80vw);
-    opacity: 0.9;
-    filter: brightness(1.4) contrast(1.15);
-    mix-blend-mode: lighten;
-    clip-path: inset(0 0 13% 0);
-    margin-bottom: -8%;
-    border-radius: 8px;
-  }
-
-  .inline-glyph .glyph-label {
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-top: 0.5rem;
-  }
-
-  @media (max-width: 600px) {
     .inline-glyph img { width: min(360px, 85vw); }
     .inline-glyph .glyph-label { font-size: 0.9rem; }
   }
+
 
   /* Smooth reveal on scroll */
   .reveal {
