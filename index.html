@@ -70,6 +70,7 @@
     border-radius: 6px;
     opacity: 0.85;
     filter: brightness(1.1) contrast(1.05);
+    clip-path: inset(0 0 15% 0);
     transition: opacity 0.3s ease;
   }
 
@@ -160,7 +161,11 @@
   }
 
   section {
-    padding: 2.5rem 0;
+    padding: 1rem 0;
+  }
+
+  section + section {
+    padding-top: 0;
   }
 
   /* Epigraph */
@@ -360,7 +365,7 @@
   /* Inline thematic glyphs */
   .inline-glyph {
     text-align: center;
-    padding: 2rem 0 0.5rem;
+    padding: 1rem 0 0.5rem;
   }
 
   .inline-glyph img {
@@ -370,7 +375,7 @@
     opacity: 0.9;
     filter: brightness(1.4) contrast(1.15);
     mix-blend-mode: lighten;
-    clip-path: inset(0 0 13% 0);
+    clip-path: inset(0 0 15% 0);
     border-radius: 8px;
   }
 
@@ -381,7 +386,7 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--ink);
-    margin-top: 0.5rem;
+    margin-top: 0.2rem;
   }
 
   /* Footer */
@@ -435,8 +440,8 @@
     <img src="images/glyph-humanity.png" alt="Humanity">
     <img src="images/glyph-call.png" alt="The Call">
   </div>
-  <h1 class="hero-title">The Freedom<br><em>Machine</em></h1>
-  <div class="hero-subtitle">A Manifesto for the Age of Artificial Intelligence</div>
+  <h1 class="hero-title">The Freedom <em>Machine</em> Manifesto</h1>
+  <div class="hero-subtitle">For the Age of Artificial Intelligence</div>
   <div class="hero-rule"></div>
   <div class="hero-author">Alex Gladstein</div>
   <div class="hero-scroll">Scroll ↓</div>
@@ -458,15 +463,14 @@
 
     <p>Artificial intelligence is the most powerful technology humans have ever built. More powerful than nuclear energy, more transformative than the internet, more intimate than the smartphone. Within a decade, AI systems will draft laws, diagnose diseases, manage economies, write propaganda, surveil populations, and wage wars. The question is not whether this will happen. It is already happening. The question is: who controls it?</p>
 
+    <div class="inline-glyph"><img src="images/glyph-surveillance.png" alt="Surveillance"><div class="glyph-label">Surveillance</div></div>
+
     <p>The danger is not abstract. There are one hundred million surveillance cameras in the United States alone. Today, processing every frame from every camera would cost roughly thirty billion dollars a year. But AI inference costs fall ten-fold annually. By 2030, it will be cheaper for a government to understand what is happening in every single corner of a country than it is to renovate a government building. The only thing standing between the present and a total surveillance state is the political norm that this is not something we do here. That norm is fragile. Technology does not wait for norms to harden.</p>
 
     <p>The tools of intelligence must answer to the individuals who use them, not to the institutions that build them. Any capability that exists only behind a corporate wall is a capability that can be revoked, censored, or weaponized against you. An AI system whose weights are secret is not a tool. It is a black box with someone else&rsquo;s hand on the switch.</p>
 
     <p>No government, no corporation, no large faceless organization is going to build AI that serves your interests over theirs. They will build AI that serves them, because intelligence is power, and power consolidates. This is not conspiracy. It is gravity.</p>
-  </section>
 
-  <!-- SECTION: OPEN MODELS -->
-  <section class="prose reveal">
     <p>Freedom in the age of AI requires open models. Not as a nice-to-have. As infrastructure. An open model is not a gift from a company. It is a foundation that no single entity can revoke. When the weights are public, the capability belongs to everyone. When the weights are private, the capability belongs to whoever holds the key.</p>
 
     <p>This is not a hypothetical. Today, a dissident in Iran cannot ask a closed AI system to help her organize, because the system flags dissent. A journalist in Nigeria cannot investigate corruption, because the model refuses queries about &ldquo;sensitive topics.&rdquo; A farmer in Bangladesh cannot access the same financial intelligence as a banker in New York, because the AI is gated behind a subscription he cannot afford and an identity check he cannot pass. These are not edge cases. They are the majority of the world. They are the default outcome of centralized AI.</p>
@@ -518,7 +522,6 @@
 
     <p>The only reliable check on the abuse of AI is to ensure that individuals have access to the same capabilities as the state. Not by permission. By design.</p>
 
-    <div class="inline-glyph"><img src="images/glyph-surveillance.png" alt="Surveillance"><div class="glyph-label">Surveillance</div></div>
   </section>
 
 <section class="prose reveal">
