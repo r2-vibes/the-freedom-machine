@@ -385,30 +385,32 @@
   /* Inline thematic glyphs */
   .inline-glyph {
     text-align: center;
-    padding: 1.5rem 0 1rem;
+    padding: 2rem 0 0.5rem;
   }
 
   .inline-glyph img {
-    width: min(140px, 30vw);
-    opacity: 0.85;
+    width: min(420px, 80vw);
+    opacity: 0.9;
     filter: brightness(1.4) contrast(1.15);
     mix-blend-mode: lighten;
-    border-radius: 6px;
+    clip-path: inset(0 0 13% 0);
+    margin-bottom: -8%;
+    border-radius: 8px;
   }
 
   .inline-glyph .glyph-label {
     font-family: 'Rajdhani', sans-serif;
-    font-weight: 600;
-    font-size: 0.65rem;
+    font-weight: 700;
+    font-size: 1rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-top: 0.4rem;
+    color: var(--ink);
+    margin-top: 0.5rem;
   }
 
   @media (max-width: 600px) {
-    .inline-glyph img { width: min(120px, 28vw); }
-    .inline-glyph .glyph-label { font-size: 0.7rem; }
+    .inline-glyph img { width: min(360px, 85vw); }
+    .inline-glyph .glyph-label { font-size: 0.9rem; }
   }
 
   /* Smooth reveal on scroll */
@@ -458,8 +460,6 @@
 
     <p>Artificial intelligence is the most powerful technology humans have ever built. More powerful than nuclear energy, more transformative than the internet, more intimate than the smartphone. Within a decade, AI systems will draft laws, diagnose diseases, manage economies, write propaganda, surveil populations, and wage wars. The question is not whether this will happen. It is already happening. The question is: who controls it?</p>
 
-    <div class="inline-glyph"><img src="images/glyph-surveillance.png" alt="Surveillance"><div class="glyph-label">Surveillance</div></div>
-
     <p>The danger is not abstract. There are one hundred million surveillance cameras in the United States alone. Today, processing every frame from every camera would cost roughly thirty billion dollars a year. But AI inference costs fall ten-fold annually. By 2030, it will be cheaper for a government to understand what is happening in every single corner of a country than it is to renovate a government building. The only thing standing between the present and a total surveillance state is the political norm that this is not something we do here. That norm is fragile. Technology does not wait for norms to harden.</p>
 
     <p>The tools of intelligence must answer to the individuals who use them, not to the institutions that build them. Any capability that exists only behind a corporate wall is a capability that can be revoked, censored, or weaponized against you. An AI system whose weights are secret is not a tool. It is a black box with someone else&rsquo;s hand on the switch.</p>
@@ -470,8 +470,6 @@
   <!-- SECTION: OPEN MODELS -->
   <section class="prose reveal">
     <p>Freedom in the age of AI requires open models. Not as a nice-to-have. As infrastructure. An open model is not a gift from a company. It is a foundation that no single entity can revoke. When the weights are public, the capability belongs to everyone. When the weights are private, the capability belongs to whoever holds the key.</p>
-
-    <div class="inline-glyph"><img src="images/glyph-humanity.png" alt="Humanity"><div class="glyph-label">Humanity</div></div>
 
     <p>This is not a hypothetical. Today, a dissident in Iran cannot ask a closed AI system to help her organize, because the system flags dissent. A journalist in Nigeria cannot investigate corruption, because the model refuses queries about &ldquo;sensitive topics.&rdquo; A farmer in Bangladesh cannot access the same financial intelligence as a banker in New York, because the AI is gated behind a subscription he cannot afford and an identity check he cannot pass. These are not edge cases. They are the majority of the world. They are the default outcome of centralized AI.</p>
 
@@ -494,25 +492,20 @@
   </section>
 
 <section class="prose reveal">
-    <div class="inline-glyph"><img src="images/glyph-architecture.png" alt="Architecture"><div class="glyph-label">The Architecture</div></div>
+    <div class="inline-glyph"><img src="images/glyph-architecture.png" alt="Architecture"><div class="glyph-label">Architecture</div></div>
 
     <p><span class="point-title">First, we open-source everything.</span> Every foundation model, every training dataset, every fine-tuning technique. The moment a capability exists only behind a corporate wall, it becomes a vector of control. Open weights are not a nice-to-have. They are a human rights imperative. The release of Llama, Mistral, Qwen, DeepSeek, and dozens of others has already proven that open models can match or exceed closed ones. This must accelerate, not retreat.</p>
 
     <p><span class="point-title">Second, we make AI run locally.</span> A model that requires a data center requires permission. The cypherpunk bet is the same one it has always been: put the power on the edge. In the user&rsquo;s hands. On their device. A laptop today can run what required a server farm two years ago. In five years, a phone will run what today requires a server. Every optimization that shrinks a model, every quantization trick that squeezes capability onto consumer hardware, is an act of liberation.</p>
 
     <p><span class="point-title">Third, we build private-by-default systems.</span> An AI that phones home is a surveillance device dressed as an assistant. Privacy is not a feature to be toggled on. It is the architecture. Local inference. End-to-end encryption for any data in transit. No telemetry. No logs. What happens on your device stays on your device.</p>
-  </section>
 
-<section class="prose reveal">
     <p><span class="point-title">Fourth, we connect AI to freedom money.</span> The same systems that censor speech will censor transactions. If your AI agent pays through Visa, it inherits every restriction Visa imposes. Bitcoin, Lightning, and ecash give AI agents the ability to transact without permission. An AI that cannot pay freely cannot act freely. An AI that cannot act freely is not free.</p>
 
     <p><span class="point-title">Fifth, we decentralize identity and communication.</span> Nostr gives us censorship-resistant messaging. Tor gives us anonymous routing. Decentralized identity gives us authentication without surveillance. These are the nervous system of the freedom machine. Without them, even a sovereign local AI is an island, cut off from the network effects that make intelligence useful.</p>
 
     <p><span class="point-title">Sixth, we train AI on our own terms.</span> The next frontier is personalization: models that improve through your usage and remain yours. Not uploaded to a company&rsquo;s servers for their benefit. Not fine-tuned on your data for someone else&rsquo;s product. Your feedback, your model, your agent. Reinforcement learning from human feedback should mean YOUR feedback, sharpening YOUR tool. Not a corporation harvesting your interactions to improve their product.</p>
-  </section>
 
-<!-- SECTION: NOT UTOPIAN -->
-  <section class="prose reveal">
     <p>This is not utopian. Every piece of this stack exists today, in some form. Open models are proliferating. Local inference is improving monthly. Bitcoin and Lightning move billions without permission. Nostr has millions of users. Ecash protocols are live. The components are here. What is missing is the integration, the urgency, and the conviction.</p>
 
     <div class="pull-quote">
@@ -521,9 +514,13 @@
 
     <p>The cypherpunks understood this. Governments will not voluntarily limit their own power. Vague regulatory language about &ldquo;catastrophic risk&rdquo; or &ldquo;national security&rdquo; will be interpreted to mean whatever serves the interests of whoever is in power. Some put their faith in norms and laws. But norms did not stop the NSA. It took a whistleblower to reveal that the agency had used the Patriot Act to justify collecting every phone record in America, and the programs barely changed afterward. The post-war nuclear taboo is sometimes held up as a model. But nuclear weapons require massive state infrastructure. AI surveillance requires a laptop.</p>
 
+    <div class="inline-glyph"><img src="images/glyph-humanity.png" alt="Humanity"><div class="glyph-label">Humanity</div></div>
+
     <p>And this conversation cannot remain America-centric. More than a hundred countries already have authoritarian governments. They are not waiting for a philosophical debate about alignment or regulatory architecture. They will deploy AI-powered surveillance and repression the moment it is cheap enough, and many already are. The real human rights battleground is not whether the Pentagon gets access to Claude. It is whether dissidents in Myanmar, Ethiopia, Iran, and dozens of other countries have access to tools that can protect them from AI-powered state repression. Open-source AI, encrypted communication, ecash, decentralized protocols: these are not abstract ideals. They are survival infrastructure for hundreds of millions of people living under authoritarian rule right now.</p>
 
     <p>The only reliable check on the abuse of AI is to ensure that individuals have access to the same capabilities as the state. Not by permission. By design.</p>
+
+    <div class="inline-glyph"><img src="images/glyph-surveillance.png" alt="Surveillance"><div class="glyph-label">Surveillance</div></div>
   </section>
 
 <section class="prose reveal">
