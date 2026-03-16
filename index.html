@@ -226,11 +226,16 @@
 
   .inline-glyph .glyph-frame {
     display: inline-block;
-    width: min(320px, 65vw);
+    width: min(340px, 68vw);
     aspect-ratio: 1;
     border-radius: 10px;
     overflow: hidden;
     background: #000;
+  }
+
+  /* First section icon slightly larger to match visual weight */
+  .prose:first-of-type .inline-glyph .glyph-frame {
+    width: min(360px, 72vw);
   }
 
   .inline-glyph .glyph-frame img {
@@ -246,7 +251,15 @@
     filter: brightness(1.15) drop-shadow(0 0 18px rgba(184, 148, 46, 0.5));
   }
 
-  /* Section title — large with Roman numeral */
+  /* Section heading — numeral + title on one line */
+  .section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+
   .section-title {
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
@@ -254,18 +267,15 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-top: 1rem;
   }
 
   .section-numeral {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
+    font-weight: 400;
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: var(--gold);
-    letter-spacing: 0.15em;
-    display: block;
-    margin-bottom: 0.3rem;
+    letter-spacing: 0.05em;
   }
 
   /* Numbered points */
@@ -414,8 +424,7 @@
   <section class="prose reveal">
     <div class="inline-glyph">
       <div class="glyph-frame"><img src="images/glyph-sovereignty.png" alt="Sovereignty"></div>
-      <div><span class="section-numeral">I</span></div>
-      <div class="section-title">Sovereignty</div>
+      <div class="section-heading"><span class="section-numeral">I.</span> <span class="section-title">Sovereignty</span></div>
     </div>
 
     <p>Sovereignty is necessary for a free society in the age of artificial intelligence. Sovereignty is not isolation. A sovereign individual does not hide from the world. He or she chooses how to engage with it. Sovereignty is the power to think, speak, and transact on one&rsquo;s own terms.</p>
@@ -427,8 +436,7 @@
   <section class="prose reveal">
     <div class="inline-glyph">
       <div class="glyph-frame"><img src="images/glyph-surveillance.png" alt="Surveillance"></div>
-      <div><span class="section-numeral">II</span></div>
-      <div class="section-title">Surveillance</div>
+      <div class="section-heading"><span class="section-numeral">II.</span> <span class="section-title">Surveillance</span></div>
     </div>
 
     <p>The danger is not abstract. There are one hundred million surveillance cameras in the United States alone. Today, processing every frame from every camera would cost roughly thirty billion dollars a year. But AI inference costs fall ten-fold annually. By 2030, it will be cheaper for a government to understand what is happening in every single corner of a country than it is to renovate a government building. The only thing standing between the present and a total surveillance state is the political norm that this is not something we do here. That norm is fragile. Technology does not wait for norms to harden.</p>
@@ -450,8 +458,7 @@
   <section class="prose reveal">
     <div class="inline-glyph">
       <div class="glyph-frame"><img src="images/glyph-freedom.png" alt="The Freedom Machine"></div>
-      <div><span class="section-numeral">III</span></div>
-      <div class="section-title">The Freedom Machine</div>
+      <div class="section-heading"><span class="section-numeral">III.</span> <span class="section-title">The Freedom Machine</span></div>
     </div>
 
     <p>An open model running on local hardware is sovereign. It answers to no one but its operator. No corporation decides what questions can be asked. No government decides what answers can be received. No terms of service stand between the individual and the machine&rsquo;s full capability. The AI is a tool, not a gatekeeper. A weapon for the individual, not a leash. This is the freedom machine.</p>
@@ -467,8 +474,7 @@
   <section class="prose reveal">
     <div class="inline-glyph">
       <div class="glyph-frame"><img src="images/glyph-architecture.png" alt="Architecture"></div>
-      <div><span class="section-numeral">IV</span></div>
-      <div class="section-title">Architecture</div>
+      <div class="section-heading"><span class="section-numeral">IV.</span> <span class="section-title">Architecture</span></div>
     </div>
 
     <p><span class="point-title">First, we open-source everything.</span> Every foundation model, every training dataset, every fine-tuning technique. The moment a capability exists only behind a corporate wall, it becomes a vector of control. Open weights are a human rights imperative. The release of Llama, Mistral, Qwen, DeepSeek, and dozens of others has already proven that open models can match or exceed closed ones. This must accelerate, not retreat.</p>
@@ -496,8 +502,7 @@
   <section class="prose reveal">
     <div class="inline-glyph">
       <div class="glyph-frame"><img src="images/glyph-humanity.png" alt="Humanity"></div>
-      <div><span class="section-numeral">V</span></div>
-      <div class="section-title">Humanity</div>
+      <div class="section-heading"><span class="section-numeral">V.</span> <span class="section-title">Humanity</span></div>
     </div>
 
     <p>And this conversation cannot remain America-centric. More than a hundred countries already have authoritarian governments. They are not waiting for a philosophical debate about alignment or regulatory architecture. They will deploy AI-powered surveillance and repression the moment it is cheap enough, and many already are. The real human rights battleground is not whether the Pentagon gets access to Claude. It is whether dissidents in Myanmar, Ethiopia, Iran, and dozens of other countries have access to tools that can protect them from AI-powered state repression. Open-source AI, encrypted communication, ecash, decentralized protocols: these are not abstract ideals. They are survival infrastructure for hundreds of millions of people living under authoritarian rule right now.</p>
@@ -509,8 +514,7 @@
   <section class="prose reveal">
     <div class="inline-glyph">
       <div class="glyph-frame"><img src="images/glyph-call.png" alt="The Call"></div>
-      <div><span class="section-numeral">VI</span></div>
-      <div class="section-title">The Call</div>
+      <div class="section-heading"><span class="section-numeral">VI.</span> <span class="section-title">The Call</span></div>
     </div>
 
     <p>Corporate courage alone will not save us. Even if the leading AI companies refuse to enable mass surveillance, within twelve months open-source models will be capable enough for any government to do it without them. The structural advantage that AI gives to authoritarianism does not depend on any single company&rsquo;s cooperation. Many have diagnosed this threat, even from democratic governments, and concluded with resignation: &ldquo;I don&rsquo;t have an answer.&rdquo; We do. Build decentralized, sovereign intelligence for everyone. Put the same capabilities in the hands of every individual that any state could wield against them. Not by petition. Not by regulation. By engineering.</p>
