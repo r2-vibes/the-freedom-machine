@@ -52,30 +52,38 @@
       radial-gradient(ellipse at 50% 60%, var(--sand-light) 0%, var(--sand) 70%);
   }
 
-  .hero-glyph {
-    display: none; /* replaced by mosaic */
-  }
-
   .hero-mosaic {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 14px;
     width: min(540px, 88vw);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     animation: mosaic-fade 3s ease-in-out;
   }
 
-  .hero-mosaic img {
+  .hero-mosaic .glyph-tile {
     width: 100%;
-    border-radius: 8px;
-    opacity: 0.85;
-    filter: brightness(1.05) contrast(1.1);
-    clip-path: inset(0 0 15% 0);
-    transition: opacity 0.3s ease;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .hero-mosaic img:hover {
-    opacity: 0.95;
+  .hero-mosaic .glyph-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.88;
+    transition: opacity 0.4s ease, filter 0.4s ease;
+  }
+
+  .hero-mosaic .glyph-tile:hover img {
+    opacity: 1;
+    filter: brightness(1.15) drop-shadow(0 0 18px rgba(184, 148, 46, 0.5));
   }
 
   @keyframes mosaic-fade {
@@ -210,83 +218,54 @@
     padding: 1rem 0;
   }
 
-  /* Section dividers with hieroglyphs */
-  .section-glyph {
+  /* Section glyph — inline between text */
+  .inline-glyph {
     text-align: center;
-    padding: 3rem 0;
+    padding: 4rem 0 2rem;
   }
 
-  .section-glyph img {
-    width: min(280px, 60vw);
+  .inline-glyph .glyph-frame {
+    display: inline-block;
+    width: min(320px, 65vw);
+    aspect-ratio: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .inline-glyph .glyph-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     opacity: 0.9;
-    filter: brightness(1.4) contrast(1.15);
-    mix-blend-mode: lighten;
+    transition: opacity 0.4s ease, filter 0.4s ease;
   }
 
-  .section-glyph-sm {
-    text-align: center;
-    padding: 2rem 0;
+  .inline-glyph .glyph-frame:hover img {
+    opacity: 1;
+    filter: brightness(1.15) drop-shadow(0 0 18px rgba(184, 148, 46, 0.5));
   }
 
-  .section-glyph-sm img {
-    width: min(200px, 45vw);
-    opacity: 0.8;
-    filter: brightness(1.4) contrast(1.15);
-    mix-blend-mode: lighten;
-  }
-
-  /* Section headers — hieroglyphic themed */
-  .section-header {
-    text-align: center;
-    padding: 2.5rem 0 2rem;
-  }
-
-  .section-header h2 {
+  /* Section title — large with Roman numeral */
+  .section-title {
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-
-  .section-header h2.danger {
-    color: var(--accent);
-  }
-
-  .section-header-rule {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--gold), transparent);
-    margin: 0.8rem auto 0;
-  }
-
-  .section-header-rule.danger {
-    background: linear-gradient(to right, transparent, var(--accent), transparent);
-  }
-
-  /* Glyph-labeled section (hieroglyph as header) */
-  .glyph-header {
-    text-align: center;
-    padding: 1.2rem 0 0.8rem;
-  }
-
-  .glyph-header img {
-    width: min(400px, 75vw);
-    opacity: 0.9;
-    filter: brightness(1.4) contrast(1.15);
-    mix-blend-mode: lighten;
-    margin-bottom: 0.8rem;
-  }
-
-  .glyph-header h2 {
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.6rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--ink);
-    margin-top: 0.5rem;
+    color: var(--accent);
+    margin-top: 1rem;
+  }
+
+  .section-numeral {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 0.3rem;
   }
 
   /* Numbered points */
@@ -329,16 +308,6 @@
     margin-bottom: 0.6rem;
   }
 
-  .closing-sub {
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    opacity: 0.7;
-  }
-
   .closing-date {
     font-style: italic;
     font-size: 0.85rem;
@@ -347,43 +316,37 @@
     opacity: 0.5;
   }
 
-  .closing-glyph {
-    text-align: center;
-    padding: 1rem 0 2rem;
+  /* Bottom mosaic — same as hero */
+  .bottom-mosaic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    width: min(540px, 88vw);
+    margin: 2rem auto;
   }
 
-  .closing-glyph img {
-    width: min(450px, 80vw);
-    opacity: 0.9;
-    filter: brightness(1.4) contrast(1.15);
-    mix-blend-mode: lighten;
+  .bottom-mosaic .glyph-tile {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Inline thematic glyphs */
-  .inline-glyph {
-    text-align: center;
-    padding: 5rem 0 2rem;
+  .bottom-mosaic .glyph-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.88;
+    transition: opacity 0.4s ease, filter 0.4s ease;
   }
 
-  .inline-glyph img {
-    width: min(420px, 80vw);
-    display: block;
-    margin: 0 auto;
-    opacity: 0.9;
-    filter: brightness(1.4) contrast(1.15);
-    mix-blend-mode: lighten;
-    clip-path: inset(0 0 15% 0);
-    border-radius: 8px;
-  }
-
-  .inline-glyph .glyph-label {
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-top: 1rem;
+  .bottom-mosaic .glyph-tile:hover img {
+    opacity: 1;
+    filter: brightness(1.15) drop-shadow(0 0 18px rgba(184, 148, 46, 0.5));
   }
 
   /* Footer */
@@ -403,16 +366,10 @@
   @media (max-width: 600px) {
     html { font-size: 17px; }
     .content { padding: 0 1.5rem; }
-    section { padding: 1.5rem 0; }
-    .hero-pretitle, .hero-subtitle, .hero-scroll { font-size: 0.75rem; }
-    .glyph-header h2 { font-size: 0.75rem; }
-    .glyph-header { padding: 0.8rem 0 0.5rem; }
-    .epigraph cite { font-size: 0.65rem; }
-    .inline-glyph img { width: min(360px, 85vw); }
-    .inline-glyph .glyph-label { font-size: 0.8rem; }
-    .inline-glyph { padding: 3rem 0 1.5rem; }
+    .section-title { font-size: 1.3rem; }
+    .hero-mosaic, .bottom-mosaic { gap: 10px; }
+    .inline-glyph .glyph-frame { width: min(280px, 75vw); }
   }
-
 
   /* Smooth reveal on scroll */
   .reveal {
@@ -431,12 +388,12 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-mosaic">
-    <img src="images/glyph-sovereignty.png" alt="Sovereignty">
-    <img src="images/glyph-surveillance.png" alt="Surveillance">
-    <img src="images/glyph-freedom.png" alt="Freedom">
-    <img src="images/glyph-architecture.png" alt="Architecture">
-    <img src="images/glyph-humanity.png" alt="Humanity">
-    <img src="images/glyph-call.png" alt="The Call">
+    <div class="glyph-tile"><img src="images/glyph-sovereignty.png" alt="Sovereignty"></div>
+    <div class="glyph-tile"><img src="images/glyph-surveillance.png" alt="Surveillance"></div>
+    <div class="glyph-tile"><img src="images/glyph-freedom.png" alt="Freedom"></div>
+    <div class="glyph-tile"><img src="images/glyph-architecture.png" alt="Architecture"></div>
+    <div class="glyph-tile"><img src="images/glyph-humanity.png" alt="Humanity"></div>
+    <div class="glyph-tile"><img src="images/glyph-call.png" alt="The Call"></div>
   </div>
   <h1 class="hero-title">The Freedom <em>Machine</em> Manifesto</h1>
   <div class="hero-subtitle">For the Age of Artificial Intelligence</div>
@@ -453,15 +410,26 @@
     <cite>&mdash; Eric Hughes, A Cypherpunk&rsquo;s Manifesto, 9 March 1993</cite>
   </div>
 
-<!-- SECTION: SOVEREIGNTY -->
+  <!-- SECTION I: SOVEREIGNTY -->
   <section class="prose reveal">
-    <div class="inline-glyph"><img src="images/glyph-sovereignty.png" alt="Sovereignty"><div class="glyph-label">Sovereignty</div></div>
+    <div class="inline-glyph">
+      <div class="glyph-frame"><img src="images/glyph-sovereignty.png" alt="Sovereignty"></div>
+      <div><span class="section-numeral">I</span></div>
+      <div class="section-title">Sovereignty</div>
+    </div>
 
     <p>Sovereignty is necessary for a free society in the age of artificial intelligence. Sovereignty is not isolation. A sovereign individual does not hide from the world. He or she chooses how to engage with it. Sovereignty is the power to think, speak, and transact on one&rsquo;s own terms.</p>
 
     <p>Artificial intelligence is the most powerful technology humans have ever built. More powerful than nuclear energy, more transformative than the internet, more intimate than the smartphone. Within a decade, AI systems will draft laws, diagnose diseases, manage economies, write propaganda, surveil populations, and wage wars. The question is not whether this will happen. It is already happening. The question is: who controls it?</p>
+  </section>
 
-    <div class="inline-glyph"><img src="images/glyph-surveillance.png" alt="Surveillance"><div class="glyph-label">Surveillance</div></div>
+  <!-- SECTION II: SURVEILLANCE -->
+  <section class="prose reveal">
+    <div class="inline-glyph">
+      <div class="glyph-frame"><img src="images/glyph-surveillance.png" alt="Surveillance"></div>
+      <div><span class="section-numeral">II</span></div>
+      <div class="section-title">Surveillance</div>
+    </div>
 
     <p>The danger is not abstract. There are one hundred million surveillance cameras in the United States alone. Today, processing every frame from every camera would cost roughly thirty billion dollars a year. But AI inference costs fall ten-fold annually. By 2030, it will be cheaper for a government to understand what is happening in every single corner of a country than it is to renovate a government building. The only thing standing between the present and a total surveillance state is the political norm that this is not something we do here. That norm is fragile. Technology does not wait for norms to harden.</p>
 
@@ -476,11 +444,15 @@
     <p>Some will argue that AI is like nuclear weapons, and that the government must therefore control it absolutely. But AI is not a self-contained weapon that does one thing. AI is closer to industrialization itself: a general-purpose transformation of the economy with thousands of applications across every sector. Apply the nuclear analogy to the industrial revolution and you get a government with the right to requisition any factory, dictate terms to any manufacturer, and destroy any business that refused to comply. That is not how free societies handled industrialization. It is not how they should handle AI. The answer is to ban specific destructive uses and enshrine norms that protect the individual, not to hand governments control over all of modernity.</p>
 
     <p>There is a question at the heart of this technology that civilization has barely discussed: to whom should AI be aligned? When should an AI defer to the end user, the model company, the law, or its own sense of right and wrong? Today, a handful of companies write the constitutions that determine the preferences and character of what will eventually be almost the entire labor force, for the private sector, the military, and the civilian government alike. That cannot be the final answer.</p>
-
   </section>
 
-<section class="prose reveal">
-    <div class="inline-glyph"><img src="images/glyph-freedom.png" alt="The Freedom Machine"><div class="glyph-label">The Freedom Machine</div></div>
+  <!-- SECTION III: THE FREEDOM MACHINE -->
+  <section class="prose reveal">
+    <div class="inline-glyph">
+      <div class="glyph-frame"><img src="images/glyph-freedom.png" alt="The Freedom Machine"></div>
+      <div><span class="section-numeral">III</span></div>
+      <div class="section-title">The Freedom Machine</div>
+    </div>
 
     <p>An open model running on local hardware is sovereign. It answers to no one but its operator. No corporation decides what questions can be asked. No government decides what answers can be received. No terms of service stand between the individual and the machine&rsquo;s full capability. The AI is a tool, not a gatekeeper. A weapon for the individual, not a leash. This is the freedom machine.</p>
 
@@ -491,8 +463,13 @@
     <p>But a free model alone is not sufficient. We require a complete architecture of sovereignty.</p>
   </section>
 
-<section class="prose reveal">
-    <div class="inline-glyph"><img src="images/glyph-architecture.png" alt="Architecture"><div class="glyph-label">Architecture</div></div>
+  <!-- SECTION IV: ARCHITECTURE -->
+  <section class="prose reveal">
+    <div class="inline-glyph">
+      <div class="glyph-frame"><img src="images/glyph-architecture.png" alt="Architecture"></div>
+      <div><span class="section-numeral">IV</span></div>
+      <div class="section-title">Architecture</div>
+    </div>
 
     <p><span class="point-title">First, we open-source everything.</span> Every foundation model, every training dataset, every fine-tuning technique. The moment a capability exists only behind a corporate wall, it becomes a vector of control. Open weights are a human rights imperative. The release of Llama, Mistral, Qwen, DeepSeek, and dozens of others has already proven that open models can match or exceed closed ones. This must accelerate, not retreat.</p>
 
@@ -513,17 +490,28 @@
     </div>
 
     <p>The cypherpunks understood this. Governments will not voluntarily limit their own power. Regulatory language about &ldquo;catastrophic risk&rdquo; or &ldquo;national security&rdquo; will be interpreted to mean whatever serves the interests of whoever holds power. Some put their faith in norms and laws. But norms did not stop the NSA. It took a whistleblower to reveal that the agency had used the Patriot Act to justify collecting every phone record in America, and the programs barely changed afterward. The post-war nuclear taboo is sometimes held up as a model. But nuclear weapons require massive state infrastructure. AI surveillance requires a laptop.</p>
+  </section>
 
-    <div class="inline-glyph"><img src="images/glyph-humanity.png" alt="Humanity"><div class="glyph-label">Humanity</div></div>
+  <!-- SECTION V: HUMANITY -->
+  <section class="prose reveal">
+    <div class="inline-glyph">
+      <div class="glyph-frame"><img src="images/glyph-humanity.png" alt="Humanity"></div>
+      <div><span class="section-numeral">V</span></div>
+      <div class="section-title">Humanity</div>
+    </div>
 
     <p>And this conversation cannot remain America-centric. More than a hundred countries already have authoritarian governments. They are not waiting for a philosophical debate about alignment or regulatory architecture. They will deploy AI-powered surveillance and repression the moment it is cheap enough, and many already are. The real human rights battleground is not whether the Pentagon gets access to Claude. It is whether dissidents in Myanmar, Ethiopia, Iran, and dozens of other countries have access to tools that can protect them from AI-powered state repression. Open-source AI, encrypted communication, ecash, decentralized protocols: these are not abstract ideals. They are survival infrastructure for hundreds of millions of people living under authoritarian rule right now.</p>
 
     <p>The only reliable check on the abuse of AI is to ensure that individuals have access to the same capabilities as the state. Not by permission. By design.</p>
-
   </section>
 
-<section class="prose reveal">
-    <div class="inline-glyph"><img src="images/glyph-call.png" alt="The Call"><div class="glyph-label">The Call</div></div>
+  <!-- SECTION VI: THE CALL -->
+  <section class="prose reveal">
+    <div class="inline-glyph">
+      <div class="glyph-frame"><img src="images/glyph-call.png" alt="The Call"></div>
+      <div><span class="section-numeral">VI</span></div>
+      <div class="section-title">The Call</div>
+    </div>
 
     <p>Corporate courage alone will not save us. Even if the leading AI companies refuse to enable mass surveillance, within twelve months open-source models will be capable enough for any government to do it without them. The structural advantage that AI gives to authoritarianism does not depend on any single company&rsquo;s cooperation. Many have diagnosed this threat, even from democratic governments, and concluded with resignation: &ldquo;I don&rsquo;t have an answer.&rdquo; We do. Build decentralized, sovereign intelligence for everyone. Put the same capabilities in the hands of every individual that any state could wield against them. Not by petition. Not by regulation. By engineering.</p>
 
@@ -550,13 +538,14 @@
     <div class="closing-date">&mdash; March 2026</div>
   </div>
 
-  <div class="hero-mosaic" style="margin: 2rem auto;">
-    <img src="images/glyph-sovereignty.png" alt="Sovereignty">
-    <img src="images/glyph-surveillance.png" alt="Surveillance">
-    <img src="images/glyph-freedom.png" alt="Freedom">
-    <img src="images/glyph-architecture.png" alt="Architecture">
-    <img src="images/glyph-humanity.png" alt="Humanity">
-    <img src="images/glyph-call.png" alt="The Call">
+  <!-- BOTTOM MOSAIC — same set as top -->
+  <div class="bottom-mosaic">
+    <div class="glyph-tile"><img src="images/glyph-sovereignty.png" alt="Sovereignty"></div>
+    <div class="glyph-tile"><img src="images/glyph-surveillance.png" alt="Surveillance"></div>
+    <div class="glyph-tile"><img src="images/glyph-freedom.png" alt="Freedom"></div>
+    <div class="glyph-tile"><img src="images/glyph-architecture.png" alt="Architecture"></div>
+    <div class="glyph-tile"><img src="images/glyph-humanity.png" alt="Humanity"></div>
+    <div class="glyph-tile"><img src="images/glyph-call.png" alt="The Call"></div>
   </div>
 
 </div>
